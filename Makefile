@@ -20,10 +20,10 @@ serve:
 
 httpreq:
 	curl --header "Content-Type: application/json" \
-    --data '{"name": "Jane"}' \
-    http://localhost:8081/greet.v1.GreetService/Greet
+	--data '{"name": "Jane"}' \
+	http://localhost:8081/greet.v1.GreetService/Greet
 
 grpcreq:
 	grpcurl -protoset <(buf build -o -) -plaintext \
-    -d '{"name": "Jane"}' \
-    localhost:8081 greet.v1.GreetService/Greet
+	-d '{"name": "Jane"}' \
+	localhost:8081 greet.v1.GreetService/Greet
